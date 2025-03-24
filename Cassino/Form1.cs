@@ -40,6 +40,12 @@ namespace Cassino
         {
             for (int i = 0; i < roleta.Length; i++)
                 AtualizaLabel(labels[i], roleta[i]);
+            int controle = roleta[0];
+            bool diff = roleta.Any(x => x != controle);
+            if (!diff)
+            {
+                MessageBox.Show("Parabéns!");
+            }
         }
 
         private void btGirar_Click(object sender, EventArgs e)
@@ -50,7 +56,6 @@ namespace Cassino
             }
 
             tmrGiro.Enabled = true;
-            btGirar.Enabled = false;
         }
 
         private void tmrGiro_Tick(object sender, EventArgs e)

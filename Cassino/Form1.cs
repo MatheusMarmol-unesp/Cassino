@@ -25,7 +25,7 @@ namespace Cassino
             
             for (int i = 0; i < roleta.Length; i++)
             {
-                roleta[i] = r.Next(0, 10);
+                roleta[i] = r.Next(0, 3);
                 tempos[i] = r.Next(0, 5001);      
             }   
             AtualizaTudo();
@@ -53,14 +53,16 @@ namespace Cassino
             for(int i  = 0; i < roleta.Length; i++)
             {
                 tempos[i] = r.Next(0, 5001);
+                labels[i].ForeColor = Color.Black;
             }
-
+            Array.Sort(tempos);
             tmrGiro.Enabled = true;
+            btGirar.Enabled = false;
         }
 
         private void tmrGiro_Tick(object sender, EventArgs e)
         {
-            bool girando = true;
+            bool girando = false;
             for (int i = 0; i < roleta.Length; i++)
             {
                 if (tempos[i] > 0)
@@ -68,14 +70,44 @@ namespace Cassino
                     tempos[i] -= tmrGiro.Interval;
                     girando |= true;
                     roleta[i]++;
-                    if (roleta[i] == 10) roleta[i] = 0;
+                    if (roleta[i] == 3) roleta[i] = 0;
                     AtualizaLabel(labels[i], roleta[i]);
+                }
+                else
+                {
+                    labels[i].ForeColor = Color.Red;
                 }
             }
             if (!girando)
             {
                 tmrGiro.Enabled = false;
                 btGirar.Enabled = true;
+
+                lbxUltimos.Items.Add($"{roleta[0]}-{roleta[1]}-{roleta[2]}");
+            }
+        }
+
+        List<string> jogadas;
+        private void chbVitorias_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chbVitorias.Checked)
+            {
+                jogadas = new List<string>();
+                foreach (string item in lbxUltimos.Items)
+                    jogadas.Add(item);
+                lbxUltimos.Items.Clear();
+                foreach (string item in jogadas)
+                {
+                    string[] nums = item.Split('-');
+                    if (nums[0] == nums[1] && nums[1] == nums[2])
+                        lbxUltimos.Items.Add(item);
+                }
+            }
+            else
+            {
+                lbxUltimos.Items.Clear();
+                foreach (string item in jogadas)
+                    lbxUltimos.Items.Add(item);
             }
         }
     }

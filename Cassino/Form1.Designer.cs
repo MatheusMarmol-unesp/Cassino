@@ -34,6 +34,8 @@
             this.lbl2 = new System.Windows.Forms.Label();
             this.lbl3 = new System.Windows.Forms.Label();
             this.tmrGiro = new System.Windows.Forms.Timer(this.components);
+            this.lbxUltimos = new System.Windows.Forms.ListBox();
+            this.chbVitorias = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // btGirar
@@ -81,11 +83,35 @@
             // 
             this.tmrGiro.Tick += new System.EventHandler(this.tmrGiro_Tick);
             // 
+            // lbxUltimos
+            // 
+            this.lbxUltimos.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbxUltimos.FormattingEnabled = true;
+            this.lbxUltimos.ItemHeight = 33;
+            this.lbxUltimos.Location = new System.Drawing.Point(12, 210);
+            this.lbxUltimos.Name = "lbxUltimos";
+            this.lbxUltimos.Size = new System.Drawing.Size(236, 202);
+            this.lbxUltimos.TabIndex = 4;
+            // 
+            // chbVitorias
+            // 
+            this.chbVitorias.AutoSize = true;
+            this.chbVitorias.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbVitorias.Location = new System.Drawing.Point(21, 420);
+            this.chbVitorias.Name = "chbVitorias";
+            this.chbVitorias.Size = new System.Drawing.Size(101, 24);
+            this.chbVitorias.TabIndex = 5;
+            this.chbVitorias.Text = "Só vitórias";
+            this.chbVitorias.UseVisualStyleBackColor = true;
+            this.chbVitorias.CheckedChanged += new System.EventHandler(this.chbVitorias_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(253, 223);
+            this.ClientSize = new System.Drawing.Size(260, 456);
+            this.Controls.Add(this.chbVitorias);
+            this.Controls.Add(this.lbxUltimos);
             this.Controls.Add(this.lbl3);
             this.Controls.Add(this.lbl2);
             this.Controls.Add(this.lbl1);
@@ -104,6 +130,8 @@
         private System.Windows.Forms.Label lbl2;
         private System.Windows.Forms.Label lbl3;
         private System.Windows.Forms.Timer tmrGiro;
+        private System.Windows.Forms.ListBox lbxUltimos;
+        private System.Windows.Forms.CheckBox chbVitorias;
     }
 }
 

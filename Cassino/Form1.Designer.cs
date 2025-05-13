@@ -44,8 +44,8 @@
             this.btGirar.Location = new System.Drawing.Point(54, 146);
             this.btGirar.Name = "btGirar";
             this.btGirar.Size = new System.Drawing.Size(151, 49);
-            this.btGirar.TabIndex = 0;
-            this.btGirar.Text = "Girar";
+            this.btGirar.TabIndex = 1;
+            this.btGirar.Text = "&Girar";
             this.btGirar.UseVisualStyleBackColor = true;
             this.btGirar.Click += new System.EventHandler(this.btGirar_Click);
             // 
@@ -91,7 +91,7 @@
             this.lbxUltimos.Location = new System.Drawing.Point(12, 210);
             this.lbxUltimos.Name = "lbxUltimos";
             this.lbxUltimos.Size = new System.Drawing.Size(236, 202);
-            this.lbxUltimos.TabIndex = 4;
+            this.lbxUltimos.TabIndex = 2;
             // 
             // chbVitorias
             // 
@@ -100,8 +100,8 @@
             this.chbVitorias.Location = new System.Drawing.Point(21, 420);
             this.chbVitorias.Name = "chbVitorias";
             this.chbVitorias.Size = new System.Drawing.Size(101, 24);
-            this.chbVitorias.TabIndex = 5;
-            this.chbVitorias.Text = "Só vitórias";
+            this.chbVitorias.TabIndex = 3;
+            this.chbVitorias.Text = "Só &vitórias";
             this.chbVitorias.UseVisualStyleBackColor = true;
             this.chbVitorias.CheckedChanged += new System.EventHandler(this.chbVitorias_CheckedChanged);
             // 
